@@ -7,6 +7,10 @@ package com.thinkinginjava.innerclasses;
  * Exercise 4: (2) Add a method to the class Sequence.SequenceSelector that produces the reference to the outer class Sequence.
  */
 
+/*
+ * Exercise 22: (2) Implement reverseSelector( ) in Sequence.java.
+ */
+
 interface Selector {
 	boolean end();
 	Object current();
@@ -36,6 +40,38 @@ public class Sequence {
 		return new SequenceSelector();
 	}
 	/*
+	 * Exercise 22
+	 */
+	public Selector reverseSelector() {
+		return new reverseSequenceSelector();
+	}
+	
+	public class reverseSequenceSelector implements Selector{
+		private int i = items.length - 1;
+		@Override
+		public boolean end() {
+			// TODO Auto-generated method stub
+			return i < 0;
+		}
+
+		@Override
+		public Object current() {
+			// TODO Auto-generated method stub
+			return items[i];
+		}
+
+		@Override
+		public void next() {
+			// TODO Auto-generated method stub
+			if(i >= 0) i--;
+		}
+		
+	}
+	
+	public Selector reserveSelector() {
+		return new reverseSequenceSelector();
+	}
+	/*
 	 * Exercise4
 	 */
 	public void pEx4() {
@@ -49,6 +85,18 @@ public class Sequence {
 		while(!selector.end()) {
 			System.out.print(selector.current() + " ");
 			selector.next();
+		}
+		
+		/*
+		 * Exercise 22
+		 */
+		Sequence reserveSequence = new Sequence(10);
+		for(int i = 0; i < 10; i++)
+			reserveSequence.add(Integer.toString(i));
+		Selector reserveSelector = reserveSequence.reserveSelector();
+		while(!reserveSelector.end()) {
+			System.out.print(reserveSelector.current() + " ");
+			reserveSelector.next();
 		}
 	}
 } /* Output:

@@ -180,9 +180,27 @@ public class Homework {
 		 * Implement your interface and pass an instance of your implementation to the method.
 		 */
 		PrintExercise(21);
+		ItfEx21.ItfEx21_in.main(null);
 		
+		/*
+		 * Exercise 22: (2) Implement reverseSelector( ) in Sequence.java.
+		 */
+		PrintExercise(22);
+		Sequence.main(null);
 		
-		
+		/*
+		 * Exercise 23: (4) Create an interface U with three methods. 
+		 * Create a class A with a method that produces a reference to a U by building an anonymous inner class. 
+		 * Create a second class B that contains an array of U. 
+		 * B should have one method that accepts and stores a reference to a U in the array, 
+		 * a second method that sets a reference in the array (specified by the method argument) to null, 
+		 * and a third method that moves through the array and calls the methods in U. 
+		 * In main( ), create a group of A objects and a single B. 
+		 * Fill the B with U references produced by the A objects. 
+		 * Use the B to call back into all the A objects. 
+		 * Remove some of the U references from the B.
+		 */
+		PrintExercise(23);
 		
 		
 	}

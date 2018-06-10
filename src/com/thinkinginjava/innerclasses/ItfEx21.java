@@ -16,5 +16,10 @@ public interface ItfEx21 {
 			// TODO Auto-generated method stub
 			System.out.println("ItfEx21_in.func1() + " + ItfEx21.i);
 		}
+		
+		public static void main(String[] args) {
+			ItfEx21 it21 = new ItfEx21_in();
+			new ItfEx21_in().func1(it21);
+		}
 	}
 }
