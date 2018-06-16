@@ -52,18 +52,27 @@ class A{
 }
 
 class B{
-	public U[] uArray;
+	private int cur_length = 2;
+	public U[] uArray = new U[cur_length];
 	
-	public void funcB(U[] i_uArray) {
-		this.uArray = i_uArray;
+	public void funcB(U i_uArray, int i) {
+		this.uArray[i] = i_uArray;
 	}
 	
 	public void funcC(int i) {
-		uArray[i] = null;
+		if (i < cur_length && i >=0) {
+			uArray[i] = null;
+			while(i + 1 < cur_length)
+			{
+				uArray[i] = uArray[i+1];
+				i++;
+			}
+			cur_length--;
+		}
 	}
 	
 	public void funcD() {
-		for(int i=0; i < uArray.length; i++) {
+		for(int i=0; i < cur_length; i++) {
 			uArray[i].funcZ();
 			uArray[i].funcY();
 			uArray[i].funcX();
@@ -74,9 +83,17 @@ class B{
 public class Ex23 {
 
 	public static void main(String[] args) {
-		A[] aArray = new A[10];
+		A[] aArray = new A[2];
+		for(int i = 0; i< aArray.length; i++)
+			aArray[i] = new A();
 		B b = new B();
 		
-		b.funcB(aArray);
+		for (int i = 0; i< aArray.length; i++)
+			b.funcB(aArray[i].makeU(), i);
+		b.funcD();
+		
+		Println("------");
+		b.funcC(0);
+		b.funcD();
 	}
 }

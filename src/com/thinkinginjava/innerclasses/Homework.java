@@ -201,6 +201,8 @@ public class Homework {
 		 * Remove some of the U references from the B.
 		 */
 		PrintExercise(23);
+		Ex23.main(null);
+		
 		
 		
 	}
