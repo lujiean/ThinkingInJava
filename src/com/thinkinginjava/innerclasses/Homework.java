@@ -203,7 +203,28 @@ public class Homework {
 		PrintExercise(23);
 		Ex23.main(null);
 		
+		/*
+		 * Exercise 24: (2) In GreenhouseControls.java, add Event inner classes that turn fans on and off. 
+		 * Configure GreenhouseController.java to use these new Event objects.
+		 */
+		PrintExercise(24);
+//		GreenhouseController.main(new String[] {"10"} );
 		
+		/*
+		 * Exercise 25: (3) Inherit from GreenhouseControls in GreenhouseControls.java to add Event inner classes that turn water mist generators on and off. 
+		 * Write a new version of GreenhouseController.java to use these new Event objects.
+		 */
+		PrintExercise(25);
+//		GreenhouseController.mainEx25(new String[] {"10"} );
+		
+		/*
+		 * Exercise 26: (2) Create a class with an inner class that has a non-default constructor (one that takes arguments). 
+		 * Create a second class with an inner class that inherits from the first inner class.
+		 */
+		PrintExercise(26);
+		C1 c1 = new C1();
+		Ex26 ex26 = new Ex26();
+		Ex26.Ex26in ex26in = ex26.new Ex26in(c1, 90);
 		
 	}
 	
